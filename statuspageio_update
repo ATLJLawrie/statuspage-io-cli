@@ -91,11 +91,11 @@ if [ $API == 'v1' ]; then
     -H "Authorization: OAuth $TOKEN" \
     -X PATCH \
     -d "component[status]=$STATUS" \
-    https://$HOST/v1/pages/$PAGE_ID/components/$COMPONENT_ID.json
+    https://$HOST/v1/pages/$PAGE_ID/components/$COMPONENT_ID.json > /dev/null
 else
  curl -sS \
     -H "Authorization: OAuth $TOKEN" \
     -X PATCH \
     -d "component[status]=$STATUS" \
-    https://$HOST/$API/pages/$PAGE_ID/components/$COMPONENT_ID.json
+    https://$HOST/$API/pages/$PAGE_ID/components/$COMPONENT_ID.json > /dev/null
 fi
